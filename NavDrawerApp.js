@@ -37,7 +37,6 @@ sap.ui.core.Control.extend("gjam.openui5.NavDrawerApp", {
     },
 
     _navTo: function (channelId, eventId, eventData) {
-                   debugger;
         var viewId = "view." + eventData.id,
             data = eventData.data;
 

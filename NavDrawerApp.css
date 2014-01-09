@@ -1,0 +1,36 @@
+.nav-app-container {
+    left: 0px;
+    top : 0px;
+    position: absolute;
+    z-index: 0;
+
+    height: 100%;
+    width: 100%;
+
+    -webkit-transition: left 500ms cubic-bezier(0, 1, 0.5, 1);
+    -moz-transition: left 500ms cubic-bezier(0, 1, 0.5, 1);
+    -ms-transition: left 500ms cubic-bezier(0, 1, 0.5, 1);
+    -o-transition: left 500ms cubic-bezier(0, 1, 0.5, 1);
+    transition: left 500ms cubic-bezier(0, 1, 0.5, 1);
+}
+
+.nav-app-container-opened{
+    left : 200px;
+}
+
+.nav-menu-container {
+    top : 0px;
+    left : 0px;
+    position: absolute;
+    z-index: -999;
+
+    -webkit-transition: z-index 600ms ease;
+    -moz-transition: z-index 600ms ease;
+    -ms-transition: z-index 600ms ease;
+    -o-transition: z-index 600ms ease;
+    transition: z-index 600ms ease;
+}
+
+.nav-menu-container-opened {
+    z-index: 999;
+}

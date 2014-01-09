@@ -1,0 +1,25 @@
+{
+  "name": "openui5-navdrawerapp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gmaguire/gjam-openui5-navdrawerapp",
+  "authors": [
+    "Gareth Maguire <gareth.maguire@sap.com>"
+  ],
+  "description": "Nav drawer (sliding menu) control for openUI5",
+  "main": "NavDrawerApp.js",
+  "keywords": [
+    "SlidingMenu",
+    "openUI5",
+    "UI5",
+    "NavDrawer"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

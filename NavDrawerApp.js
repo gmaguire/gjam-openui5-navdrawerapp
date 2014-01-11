@@ -17,7 +17,7 @@ sap.ui.core.Control.extend("gjam.openui5.NavDrawerApp", {
         var bus = sap.ui.getCore().getEventBus();
         bus.subscribe("nav", "to", this._navTo, this);
         bus.subscribe("nav", "back", this._navBack, this);
-        bus.subscribe("nav", "openmenu", this._openMenu, this);
+        bus.subscribe("nav", "togglemenu", this._toggleMenu, this);
     },
 
     _navBack: function () {
@@ -51,11 +51,20 @@ sap.ui.core.Control.extend("gjam.openui5.NavDrawerApp", {
             this._app.addPage(sap.ui.htmlview(viewId, viewId));
         }
 
-        this._app.to(viewId,"flip", data);
+        this._app.to(viewId, "fade", data);
 
         jQuery.sap.log.info("navTo '" + viewId);
 
         this._closeMenu();
+    },
+
+    _toggleMenu: function () {
+        if ($(".nav-app-container").hasClass("nav-app-container-opened")) {
+            this._closeMenu();
+        }
+        else {
+            this._openMenu();
+        }
     },
 
     _openMenu: function () {
@@ -65,9 +74,9 @@ sap.ui.core.Control.extend("gjam.openui5.NavDrawerApp", {
     },
 
     _closeMenu: function () {
+        $(".nav-menu-container").removeClass("nav-menu-container-opened");
         $(".nav-app-container").removeClass("nav-app-container-opened");
         $(".nav-drawer-app").removeClass("nav-app-container-opened");
-        $(".nav-menu-container").removeClass("nav-menu-container-opened");
     },
 
     renderer: function (renderManager, control) {
